@@ -4,12 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/app.js" defer></script>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <!-- form to collect user input -->
-
-    <!-- HTML element to contain data from database -->
+    <div>
+      <h1 id="guestbook-title">Guestbook</h1>
+      <form id="guestbook-container">
+        <label for="guestname">Please enter your name:</label>
+        <input type="text" name="guestname" required />
+        <label for="content">Enter your message:</label>
+        <input type="textarea" name="content" required id="content-box" />
+        <button type="submit">Submit Message</button>
+      </form>
+    </div>
+    <div id="guestbook-messages"></div>
   </body>
 </html>
