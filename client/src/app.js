@@ -6,7 +6,7 @@ function handleSubmit(event) {
   const formData = new FormData(guestbookContainer);
   const formValues = Object.fromEntries(formData);
   console.log(formValues);
-  fetch("http://localhost:8080/guestbook", {
+  fetch("https://assignment-week4.onrender.com/guestbook", {
     //This url will need to be replaced with a live url once things are underway
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +17,9 @@ function handleSubmit(event) {
 guestbookContainer.addEventListener("submit", handleSubmit);
 
 async function getGuestbookContent() {
-  const response = await fetch("http://localhost:8080/guestbook");
+  const response = await fetch(
+    "https://assignment-week4.onrender.com/guestbook"
+  );
   const guestBookEntries = await response.json();
   console.log(guestBookEntries);
   return guestBookEntries;
